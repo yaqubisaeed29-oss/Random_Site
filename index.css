@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    background-color: #07060d;
+    color: #f8fafc;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+}
+
+/* Deep obsidian cosmic background with atmospheric purple neon glow */
+.cosmic-canvas {
+  background-color: #07060d;
+  background-image:
+    radial-gradient(circle at 50% 44%, rgba(147, 51, 234, 0.18) 0%, rgba(88, 28, 135, 0.08) 34%, rgba(7, 6, 13, 0) 68%),
+    radial-gradient(circle at 22% 18%, rgba(192, 132, 252, 0.06) 0%, transparent 42%),
+    radial-gradient(circle at 78% 82%, rgba(126, 34, 206, 0.07) 0%, transparent 45%);
+}
+
+/* Subtle micro-grid overlay with radial vignette fade */
+.cosmic-grid {
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, rgba(168, 85, 247, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168, 85, 247, 0.045) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 68% 62% at 50% 50%, #000 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 68% 62% at 50% 50%, #000 35%, transparent 100%);
+}
+
+/* Title metallic-neon text styling */
+.neon-wordmark {
+  background: linear-gradient(180deg, #ffffff 15%, #e9d5ff 68%, #c084fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 28px rgba(168, 85, 247, 0.28));
+}
+
+/* Main Hero CTA Button — Sculptural Purple Neon */
+.neon-portal-btn {
+  position: relative;
+  background: linear-gradient(135deg, #9333ea 0%, #7e22ce 48%, #581c87 100%);
+  border: 1px solid rgba(216, 180, 254, 0.42);
+  box-shadow:
+    0 0 28px rgba(168, 85, 247, 0.42),
+    0 0 72px rgba(126, 34, 206, 0.24),
+    0 14px 34px -8px rgba(0, 0, 0, 0.78),
+    inset 0 1px 1px rgba(255, 255, 255, 0.34),
+    inset 0 -2px 6px rgba(34, 7, 62, 0.55);
+  transition:
+    transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.24s ease,
+    background 0.24s ease;
+}
+
+.neon-portal-btn:hover {
+  transform: translateY(-2px) scale(1.022);
+  border-color: rgba(243, 232, 255, 0.72);
+  background: linear-gradient(135deg, #a855f7 0%, #9333ea 50%, #6b21a8 100%);
+  box-shadow:
+    0 0 38px rgba(192, 132, 252, 0.62),
+    0 0 96px rgba(147, 51, 234, 0.36),
+    0 18px 40px -8px rgba(0, 0, 0, 0.85),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.48),
+    inset 0 -2px 6px rgba(34, 7, 62, 0.45);
+}
+
+.neon-portal-btn:active {
+  transform: translateY(1px) scale(0.978);
+  box-shadow:
+    0 0 24px rgba(168, 85, 247, 0.52),
+    0 6px 18px -4px rgba(0, 0, 0, 0.85),
+    inset 0 2px 6px rgba(20, 4, 38, 0.6);
+}
+
+.neon-portal-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px #07060d,
+    0 0 0 5px #c084fc,
+    0 0 42px rgba(192, 132, 252, 0.65);
+}
+
+/* Diagonal specular sheen sweep on hover */
+.neon-portal-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.22) 48%,
+    rgba(243, 232, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.08) 54%,
+    transparent 78%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.neon-portal-btn:hover::before {
+  transform: translateX(120%);
+}
+
+/* Expanding neon shockwave ring when clicked */
+@keyframes portalShockwave {
+  0% {
+    opacity: 0.72;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.42);
+  }
+}
+
+.animate-shockwave {
+  animation: portalShockwave 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Dice tumble animation on launch */
+@keyframes diceTumble {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  28% {
+    transform: rotate(-22deg) scale(1.22);
+  }
+  65% {
+    transform: rotate(382deg) scale(1.16);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.animate-dice-tumble {
+  animation: diceTumble 0.56s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Gentle idle breathing aura behind the CTA */
+@keyframes ambientPulse {
+  0%,
+  100% {
+    opacity: 0.52;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+}
+
+.animate-ambient-pulse {
+  animation: ambientPulse 4.6s ease-in-out infinite;
+}
+
+/* Smooth fade-slide in for the launched confirmation pill */
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-card-reveal {
+  animation: cardReveal 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
