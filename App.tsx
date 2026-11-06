@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { DiscoveryEngine } from "./utils/discoveryEngine";
-import { SOURCE_LABELS, type Candidate } from "./utils/discovery/sources";
+import { DiscoveryEngine } from "./discoveryEngine";
+import { SOURCE_LABELS, type Candidate } from "./sources";
 
 const TAG_ACCENTS: Record<string, string> = {
   Unusual: "border-fuchsia-400/35 bg-fuchsia-500/12 text-fuchsia-200",
