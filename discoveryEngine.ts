@@ -1,4 +1,4 @@
-import { CURATED_WEBSITES } from "../data/websites";
+import { CURATED_WEBSITES } from "./websites";
 import {
   LIVE_SOURCES,
   normalizeHost,
@@ -6,7 +6,7 @@ import {
   type Candidate,
   type SourceDefinition,
   type SourceKind,
-} from "./discovery/sources";
+} from "./sources";
 
 const STORAGE_KEY = "random_site_discovery_v2";
 const MAX_VISITED_HOSTS = 6000;
