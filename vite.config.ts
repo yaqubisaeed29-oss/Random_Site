@@ -8,8 +8,9 @@ import { viteSingleFile } from "vite-plugin-singlefile";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// https://vite.dev/config/
+// GitHub Pages project site: https://<owner>.github.io/Random_Site/
 export default defineConfig({
+  base: "/Random_Site/",
   plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
     alias: {
